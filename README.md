@@ -2,13 +2,15 @@
 
 A Ruby interface for the [Sipgate API](https://developer.sipgate.io/), providing easy access to Sipgate's VoIP and telecommunications services. This gem allows you to manage users, send faxes, access call history, and interact with faxlines programmatically.
 
+> [!NOTE]
+> This gem uses PAT (Personal Access Token) for authentication.
+
 ## Features
 
 - **User Management**: Retrieve and manage Sipgate users
 - **Fax Services**: Send faxes programmatically
 - **Call History**: Access call and communication history
 - **Faxline Management**: Manage faxlines and their configurations
-- **Authentication**: Secure API authentication handling
 
 ## Installation
 

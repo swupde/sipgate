@@ -3,33 +3,33 @@ require 'faraday'
 module Sipgate
   class Connexion
     include Singleton
-    
+
     ROOT_URL = 'https://api.sipgate.com/'
-    
+
     def self.conn(options={})
       options.delete(:authenticated){true} ? auth_connexion : connexion
     end
-    
+
     private
-    
+
     def self.connexion
-      @connexion ||= get_connexion(false)
+      @connexion ||= get_connexion
     end
-    
+
     def self.auth_connexion
-      get_connexion(true)
+      get_connexion
     end
-    
-    def self.get_connexion(authenticated)
+
+    def self.get_connexion
       Faraday.new(url: ROOT_URL) do |conn|
         conn.request  :url_encoded
         conn.response :logger do |logger|
           logger.filter(/(api_key=)(\w+)/,'\1[REMOVED]')
         end
-        conn.authorization(:Bearer, Sipgate::Authentication.token) if authenticated
+        conn.authorization(:Basic, Sipgate.username, Sipgate.password)
         conn.adapter  Faraday.default_adapter
      end
     end
   end
-  
+
 end
