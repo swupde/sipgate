@@ -26,7 +26,7 @@ module Sipgate
         conn.response :logger do |logger|
           logger.filter(/(api_key=)(\w+)/,'\1[REMOVED]')
         end
-        conn.authorization(:Basic, Sipgate.username, Sipgate.password)
+        conn.use Faraday::Request::BasicAuthentication, Sipgate.username, Sipgate.password
         conn.adapter  Faraday.default_adapter
      end
     end
