@@ -1,7 +1,6 @@
 require 'sipgate/version'
 require 'sipgate/configuration'
 require 'sipgate/connexion'
-require 'sipgate/authentication'
 require 'sipgate/user'
 require 'sipgate/faxline'
 require 'sipgate/history'
