@@ -17,7 +17,6 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
   
   s.add_dependency "faraday",            ">= 0.9.2", "< 1.2"
-  s.add_dependency "faraday_middleware", ">= 0.9.0", "< 1.2"
 
   s.add_development_dependency "rails", "~> 5.1.4"
   s.add_development_dependency "sqlite3"
