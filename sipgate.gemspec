@@ -14,11 +14,13 @@ Gem::Specification.new do |s|
   s.description = "Sipgate."
   s.license     = "MIT"
 
+  s.required_ruby_version = ">= 3.0.0"
+
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
   
   s.add_dependency "faraday",            "~> 2.0"
 
-  s.add_development_dependency "rails", "~> 5.1.4"
-  s.add_development_dependency "sqlite3"
+  s.add_development_dependency "rails", "~> 7.2.0"
+  s.add_development_dependency "sqlite3", "~> 1.7"
   s.add_development_dependency 'byebug'
 end
